@@ -22,12 +22,8 @@ router.get('/', function (req, res, next) {
     let echostr = req.query.echostr;
     let nonce = req.query.nonce;
 
-    let oriArray = new Array();
-    oriArray[0] = nonce;
-    oriArray[1] = timestamp;
-    oriArray[2] = token;
-    oriArray.sort();
-    let original = oriArray.join('');
+    var str = [token,timestamp,nonce].sort().join('');
+    
     //加密 
     // var shaObj = new jsSHA(original, 'TEXT');
     // var scyptoString = shaObj.getHash('SHA-1', 'HEX');
