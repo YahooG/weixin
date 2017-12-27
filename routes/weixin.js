@@ -1,33 +1,45 @@
 const express = require('express');
 const router = express.Router();
+const sha1 = require('sha1');
 
 
+const config = {
+    wechat: {
+        appID: 'wxfdef306b176c8b93',
+        appSecret: 'b5dae8467401c3175d780db7f81d6ae2',
+        token: 'weixin'
+    }
+};
 
-//1s2hBQHJNeRAPo8ewyXR63qxEhrVJIZVyCjV4Naj966
+
 
 router.get('/', function (req, res, next) {
-    // let token = "weixin";
-    // let signature = req.query.signature;
-    // let timestamp = req.query.timestamp;
-    // let echostr = req.query.echostr;
-    // let nonce = req.query.nonce;
 
-    // let oriArray = new Array();
-    // oriArray[0] = nonce;
-    // oriArray[1] = timestamp;
-    // oriArray[2] = token;
-    // oriArray.sort();
-    // var original = oriArray.join('');
-    // //加密 
+    var token = config.wechat.token
+    
+    let signature = req.query.signature;
+    let timestamp = req.query.timestamp;
+    let echostr = req.query.echostr;
+    let nonce = req.query.nonce;
+
+    let oriArray = new Array();
+    oriArray[0] = nonce;
+    oriArray[1] = timestamp;
+    oriArray[2] = token;
+    oriArray.sort();
+    let original = oriArray.join('');
+    //加密 
     // var shaObj = new jsSHA(original, 'TEXT');
     // var scyptoString = shaObj.getHash('SHA-1', 'HEX');
-    // if(signature == scyptoString){
-    //     //验证成功
-        res.json({ status: "ok", info: "连接成功" });
-    // } else {
-    //     res.json({ status: "ok", info: "连接失败" });
-    //     //验证失败
-    //     }
+    let scyptoString = sha1(original);
+    
+    if (signature == scyptoString) {
+        //验证成功
+        this.body = echostr + '';
+    } else {
+        this.body = 'wrong';
+        //验证失败
+    }
 });
 
 
