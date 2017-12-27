@@ -1,40 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const sha1 = require('sha1');
+const crypto = require('crypto');
 
-
-const config = {
-    wechat: {
-        appID: 'wxfdef306b176c8b93',
-        appSecret: 'b5dae8467401c3175d780db7f81d6ae2',
-        token: 'weixin'
-    }
-};
-
-
+const token = 'weixin';
 
 router.get('/', function (req, res, next) {
+    const { signature, timestamp, nonce, echostr } = req.query;
 
-    var token = config.wechat.token
-    
-    let signature = req.query.signature;
-    let timestamp = req.query.timestamp;
-    let echostr = req.query.echostr;
-    let nonce = req.query.nonce;
+    if (!signature || !timestamp || !nonce || !echostr) {
+        return res.send('invalid request');
+    }
+    const params = [token, timestamp, nonce];
+    params.sort();
 
-    var str = [token,timestamp,nonce].sort().join('');
-    
-    //加密 
-    // var shaObj = new jsSHA(original, 'TEXT');
-    // var scyptoString = shaObj.getHash('SHA-1', 'HEX');
-    let scyptoString = sha1(original);
-    
-    if (signature == scyptoString) {
-        //验证成功
-        this.body = echostr + '';
+    const hash = crypto.createHash('sha1');
+    const sign = hash.update(params.join('')).digest('hex');
+
+    if (signature == sign) {
+        res.send(echostr);
     } else {
-        this.body = 'wrong';
-        //验证失败
+        res.send('invalid sign');
     }
 });
 
