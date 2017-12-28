@@ -45,12 +45,22 @@ const map =
     {
         "button": [
             {
-                "name": "demo",
+                "type": "click",
+                "name": "今日歌曲",
+                "key": "V1001_TODAY_MUSIC"
+            },
+            {
+                "type": "click",
+                "name": "歌手简介",
+                "key": "V1001_TODAY_SINGER"
+            },
+            {
+                "name": "菜单",
                 "sub_button": [
                     {
                         "type": "view",
-                        "name": "test",
-                        "url": "http://39.106.132.165/app"
+                        "name": "搜索",
+                        "url": "http://www.soso.com/"
                     },
                     {
                         "type": "view",
@@ -60,11 +70,10 @@ const map =
                     {
                         "type": "click",
                         "name": "赞一下我们",
-                        "key": "BTN_GOOD"
+                        "key": "V1001_GOOD"
                     }
                 ]
             }
-
         ]
     }
 
