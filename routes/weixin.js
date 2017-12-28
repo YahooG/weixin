@@ -45,22 +45,24 @@ const map =
     {
         "button": [
             {
-                "type": "click",
-                "name": "今日歌曲",
-                "key": "V1001_TODAY_MUSIC"
+                "type": "view",
+                "name": "我",
+                "url": "http://www.baidu.com/"
             },
+
             {
-                "type": "click",
+                "type": "view",
                 "name": "歌手简介",
-                "key": "V1001_TODAY_SINGER"
+                "url": "http://www.baidu.com/"
             },
+
             {
                 "name": "菜单",
                 "sub_button": [
                     {
                         "type": "view",
                         "name": "搜索",
-                        "url": "http://39.106.132.165/login"
+                        "url": "http://www.soso.com/"
                     },
                     {
                         "type": "view",
@@ -68,12 +70,13 @@ const map =
                         "url": "http://v.qq.com/"
                     },
                     {
-                        "type": "click",
-                        "name": "赞一下我们",
-                        "key": "V1001_GOOD"
+                        "type": "view",
+                        "name": "赞一",
+                        "url": "http://v.qq.com/"
                     }]
             }]
-    };
+
+    }
 
 function getAccessToken() {
     request.get(`https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appId}&secret=${appsecret}`, {}, function (err, httpResponse, body) {
