@@ -1,146 +1,179 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-      *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      li{
-        list-style: none;
 
-      }
-      .clearfix::after{
-        content: "";
-        display: block;
-        clear: both;
-      }
-      .adminTop{
-        width: 100%;
-        height: 58px;
-        line-height: 58px;
-        padding: 0 20px;
-        background: #00E3E3;
-      }
-      .logoLeft{
-        float: left;
-        color: #fff;
-        font-size: 14px;
-      }
-      .logoLeft span{
-        float: left;
-        text-align: center;
-        display: block;
-        width: 48px;
-        height: 48px;
-        line-height: 48px;
-        border: 1px solid #fff;
-        border-radius: 50%;
-      }
-      .logoRight li a{
-        text-decoration: none;
-        color: #fff;
-        font-size: 14px;
-      }
-      .logoRight{
-        float: right;
-      }
-      .logoRight ul li{
-        float: right;
-        padding: 0 20px;
-        float: left;
-        cursor: pointer;
-      }
-      .adminC{
-        width: 100%;
-      }
-      .cLeft{
-        width: 20%;
-        height: auto;
-        float: left;
-        background: #4F4F4F;
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      }
-      .cLeft li{
-        width: 100%;
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-        border: 1px solid #000;
-        border-top: none;
-      }
-      .cLeft ul li a{
-        color:#FFF;
-        text-decoration: none;
-        font-size: 14px;
-      }
-      .cRight{
-        width:70%;
-        float: left;
-        padding-left: 25px;
-      }
-      .cRight div{
-        width: 100%;
-        height: 58px;
-        border: 1px solid gray;
-        line-height: 58px;
-      }
-      .cRight input{
-        width: 155px;
-        height: 35px;
-        line-height: 35px;
-        margin-left: 25px;
-      }
-      .cRight button{
-        width: 45px;
-        height: 25px;
-        line-height: 25px;
-      }
+    li {
+      list-style: none;
 
+    }
 
-    </style>
-  </head>
-  <body>
-    <div class="adminTop clearfix">
-      <div class="logoLeft">
-        <span>LOGO</span>
-        &nbsp;&nbsp;&nbsp;&nbsp;立伟人力资源后台管理中心
+    .clearfix::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .adminTop {
+      width: 100%;
+      height: 58px;
+      line-height: 58px;
+      padding: 0 20px;
+      background: #00E3E3;
+    }
+
+    .logoLeft {
+      float: left;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .logoLeft span {
+      float: left;
+      text-align: center;
+      display: block;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+    }
+
+    .logoRight li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .logoRight {
+      float: right;
+    }
+
+    .logoRight ul li {
+      float: right;
+      padding: 0 20px;
+      float: left;
+      cursor: pointer;
+    }
+
+    .adminC {
+      width: 100%;
+    }
+
+    .cLeft {
+      width: 20%;
+      height: auto;
+      float: left;
+      background: #4F4F4F;
+
+    }
+
+    .cLeft li {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 1px solid #000;
+      border-top: none;
+    }
+
+    .cLeft ul li a {
+      color: #FFF;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .cRight {
+      width: 70%;
+      float: left;
+      padding-left: 25px;
+    }
+
+    .cRight div {
+      width: 100%;
+      height: 58px;
+      border: 1px solid gray;
+      line-height: 58px;
+    }
+
+    .cRight input {
+      width: 155px;
+      height: 35px;
+      line-height: 35px;
+      margin-left: 25px;
+    }
+
+    .cRight button {
+      width: 45px;
+      height: 25px;
+      line-height: 25px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="adminTop clearfix">
+    <div class="logoLeft">
+      <span>LOGO</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;立伟人力资源后台管理中心
+    </div>
+    <div class="logoRight">
+      <ul>
+        <li>
+          <a href="#">用户:admin</a>
+        </li>
+        <li>
+          <a href="#">系统首页</a>
+        </li>
+        <li>
+          <a href="#">刷新</a>
+        </li>
+        <li>
+          <a href="#">清除缓存</a>
+        </li>
+        <li>
+          <a href="#">设置</a>
+        </li>
+        <li>
+          <a href="#">退出</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="adminC clearfix">
+    <div class="cLeft">
+      <ul>
+        <li>
+          <a href="#">用户管理</a>
+        </li>
+        <li>
+          <a href="#">新闻管理</a>
+        </li>
+      </ul>
+    </div>
+    <div class="cRight">
+      <div>
+        <input type="text" name="" value="" placeholder="请输入用户身份证号">
+        <button type="button" name="button">搜索</button>
       </div>
-      <div class="logoRight">
-        <ul>
-          <li><a href="#">用户:admin</a></li>
-          <li><a href="#">系统首页</a></li>
-          <li><a href="#">刷新</a></li>
-          <li><a href="#">清除缓存</a></li>
-          <li><a href="#">设置</a></li>
-          <li><a href="#">退出</a></li>
-        </ul>
+      <div class="">
+
       </div>
 
     </div>
-    <div class="adminC clearfix">
-      <div class="cLeft">
-        <ul>
-          <li><a href="#">用户管理</a></li>
-          <li><a href="#">新闻管理</a></li>
-        </ul>
-      </div>
-      <div class="cRight">
-        <div>
-          <input type="text" name="" value=""placeholder="请输入用户身份证号">
-          <button type="button" name="button">搜索</button>
-        </div>
-        <div class="">
-          
-        </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
 
-      </div>
-    </div>
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </body>
 </html>

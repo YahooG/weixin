@@ -6,7 +6,6 @@ class User extends Database {
   constructor(table) {
     super(table);
   }
-  
 }
 
 

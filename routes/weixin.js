@@ -3,9 +3,9 @@ const router = express.Router();
 const crypto = require('crypto');
 const request = require('request');
 
+
+
 const token = 'weixin';
-
-
 
 router.get('/', function (req, res, next) {
     let { signature, timestamp, nonce, echostr } = req.query;
@@ -32,14 +32,8 @@ const appsecret = 'b5dae8467401c3175d780db7f81d6ae2';
 
 
 router.post('/', function (req, res, next) {
-    //对公众号具体操作
     getAccessToken();
 });
-
-
-/**
- * 公众号底部Tab
- */
 
 const map =
     {
@@ -60,7 +54,7 @@ const map =
                     {
                         "type": "view",
                         "name": "搜索",
-                        "url": "http://39.106.132.165/login"
+                        "url": "http://www.soso.com/"
                     },
                     {
                         "type": "view",

@@ -47,27 +47,31 @@
       position: absolute;
       top: 47px;
     }
-    .loginBox{
+
+    .loginBox {
       width: 692px;
       height: 336px;
       background: url(/images/logininfo.png)no-repeat;
-      margin-top:176px;
+      margin-top: 176px;
       margin: 176px auto 0;
-      border: 1px solid transparent;;
-
+      border: 1px solid transparent;
+      ;
     }
-    .loginBox ul{
+
+    .loginBox ul {
       width: 407px;
       height: 207px;
       margin-top: 70px;
       margin-left: 285px;
     }
-    li{
+
+    li {
       list-style: none;
       display: block;
       margin-bottom: 25px;
     }
-    .loginuser{
+
+    .loginuser {
       width: 299px;
       height: 48px;
       background: url(/images/loginuser.png) no-repeat;
@@ -76,7 +80,8 @@
       padding-left: 44px;
       font-weight: bold;
     }
-    .loginpwd{
+
+    .loginpwd {
       width: 299px;
       height: 48px;
       line-height: 48px;
@@ -86,12 +91,14 @@
       font-size: 14px;
       color: #90a2bc;
     }
-    .checkbox{
+
+    .checkbox {
       font-size: 12px;
       color: gray;
       vertical-align: middle;
     }
-    .loginbtn{
+
+    .loginbtn {
       width: 111px;
       height: 35px;
       background: url(/images/buttonbg.png)repeat-x;
@@ -111,10 +118,21 @@
   <div class="loginBody">
     <div class="loginBox">
       <ul>
-        <li><label for=""><input type="text" name="" value="" placeholder="请输入账号"class="loginuser"></label></li>
-        <li><label for=""><input type="password" name="" value="" placeholder="请输入密码"class="loginpwd"></label></li>
-        <li><label class="checkbox"for=""><input type="checkbox" name="" value="" placeholder=""></label>记住密码</li>
-        <button class="loginbtn"type="button" name="button">登录</button>
+        <li>
+          <label for="">
+            <input type="text" name="" value="" placeholder="请输入账号" class="loginuser">
+          </label>
+        </li>
+        <li>
+          <label for="">
+            <input type="password" name="" value="" placeholder="请输入密码" class="loginpwd">
+          </label>
+        </li>
+        <li>
+          <label class="checkbox" for="">
+            <input type="checkbox" name="" value="" placeholder="">
+          </label>记住密码</li>
+        <button class="loginbtn" type="button" name="button">登录</button>
       </ul>
 
     </div>
@@ -123,38 +141,35 @@
   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript">
-    $(function(){
+    $(function () {
       var loginbtn = $(".loginbtn");
-      loginbtn.click(function(){
+      loginbtn.click(function () {
         var username = $(".loginuser").val();
         var pwd = $(".loginpwd").val();
         console.log(username);
         console.log(pwd);
-        if(!username||!pwd){
+        if (!username || !pwd) {
           console.log("用户名或密码不允许为空");
         }
-        else{
+        else {
           $.ajax({
-            method:"post",
-            url:"/loginbtn",
-            data:{
-              name:username,
-              pwd:pwd
+            method: "post",
+            url: "/loginbtn",
+            data: {
+              name: username,
+              pwd: pwd
             }
-          }).done(function(msg){
+          }).done(function (msg) {
             console.log(msg);
-            if(msg.data=="/admin"){
+            if (msg.data == "/admin") {
               window.location = "http://39.106.132.165/admin"
             }
-          }).fail(function(jqXHR,textstatus){
-            console.log("Request failed:"+textstatus);
+          }).fail(function (jqXHR, textstatus) {
+            console.log("Request failed:" + textstatus);
           })
         }
-
       })
     })
-
-
   </script>
 </body>
 

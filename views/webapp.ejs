@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- 文档：https://weui.io/  -->
+    <link href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/css/mui.min.css">
+    <link rel="stylesheet" href="/stylesheets/css/app.css" />
+    <title>Document</title>
+    <style>
+        .weui-tabbar {
+            position: fixed;
+        }
+
+        p.weui-tabbar__label {
+            font-size: 17px;
+            height: 22px;
+        }
+
+        .content>.netcredit {}
+
+        .content>.personal {}
+
+        .content>.credit {}
+
+        .bottomHideent {
+            display: none;
+        }
+
+
+        html,
+        body {
+            background-color: #efeff4;
+        }
+
+        .title a {
+            font-size: 14px;
+            color: black;
+        }
+
+        .swiper-container {
+            height: 180px;
+        }
+
+        .swiper-container img {
+            height: 180px;
+            width: 100%;
+        }
+
+        .swiper-pagination {
+            margin-bottom: 5px;
+        }
+
+        .weui-grids .jieKuan {
+            width: 50%;
+        }
+
+        .xinYongKa {
+            margin-top: 6px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .C p:nth-child(1) {
+            float: left
+        }
+
+        .C p:nth-child(2) {
+            float: right
+        }
+
+        .C p {
+            widows: 100px;
+            height: 35px;
+            line-height: 35px;
+            box-sizing: border-box;
+            padding: 0px 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <div class="page__bd" style="height: 100%;">
+            <div class="weui-tab">
+                <div class="weui-tab__panel">
+                    <div class="content">
+                        <% include includes/credit %>
+                            <% include includes/netcredit %>
+                                <% include includes/personal %>
+                    </div>
+                </div>
+                <div class="weui-tabbar">
+                    <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+                        <!-- <span style="display: inline-block;position: relative;"> -->
+                        <!-- <img src="./images/credit.svg" alt="" class="weui-tabbar__icon"> -->
+                        <!-- <span class="weui-badge" style="position: absolute;top: -2px;right: -13px;">8</span> -->
+                        <!-- </span> -->
+                        <p class="weui-tabbar__label">信用中心</p>
+                    </a>
+                    <a href="javascript:;" class="weui-tabbar__item">
+                        <!-- <img src="./images/icon_tabbar.png" alt="" class="weui-tabbar__icon"> -->
+                        <p class="weui-tabbar__label">网贷中心</p>
+                    </a>
+                    <!-- <a href="javascript:;" class="weui-tabbar__item">
+                        <span style="display: inline-block;position: relative;"> -->
+                    <!-- <img src="./images/netcredit.svg" alt="" class="weui-tabbar__icon"> -->
+                    <!-- <span class="weui-badge weui-badge_dot" style="position: absolute;top: 0;right: -6px;"></span> -->
+                    <!-- </span>
+                        <p class="weui-tabbar__label">发现</p>
+                    </a> -->
+                    <a href="javascript:;" class="weui-tabbar__item">
+                        <!-- <img src="./images/personal.svg" alt="" class="weui-tabbar__icon"> -->
+                        <p class="weui-tabbar__label">我</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- http://css88.com/doc/zeptojs_api/ -->
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script src="/js/mui.min.js"></script>
+    <script src="/js/tools.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.weui-tabbar__item').on('click', function () {
+                $(this).addClass('weui-bar__item_on').siblings('.weui-bar__item_on').removeClass('weui-bar__item_on');
+                var type = $(this).children('p').text();
+                switch (type) {
+                    case '我':
+                        $('.content > .netcredit').addClass('bottomHideent');
+                        $('.content > .credit').addClass('bottomHideent');
+                        $('.content > .persona').removeClass('bottomHideent');
+                        break;
+
+                    case '网贷中心':
+                        $('.content > .credit').addClass('bottomHideent');
+                        $('.content > .persona').addClass('bottomHideent');
+                        $('.content > .netcredit').removeClass('bottomHideent');
+                        break;
+
+                    case '信用中心':
+                        $('.content > .persona').addClass('bottomHideent');
+                        $('.content > .netcredit').addClass('bottomHideent');
+                        $('.content > .credit').removeClass('bottomHideent');
+                        break;
+
+                    default:
+                        break;
+                }
+            });
+        });
+
+        // var slider = mui("#slider");
+        // var swiperTest = null;
+        // var banerArray = new Array();
+
+        // mui.init({
+        //     swipeBack: true //启用右滑关闭功能
+        // });
+        // var slider = mui("#slider");
+        // slider.slider({
+        //     interval: 500
+        // });
+        // /**/
+        // mui.plusReady(function () {
+        //     swiperTest = document.getElementById('swiperTest');
+        //     getaData();
+        // })
+        // // 获取数据
+        // function getaData() {
+        //     var timestamp = getDataStr();
+        //     mui.plusReady(function () {
+        //         mui.ajax(baseUrl, {
+        //             data: {
+        //                 key: '',
+        //                 typeId: '',
+        //                 showapi_appid: appid,
+        //                 showapi_sign: sign,
+        //                 showapi_timestamp: timestamp,
+        //                 page: 1
+        //             },
+        //             dataType: 'json',
+        //             type: 'post',
+        //             timeout: 10000,
+        //             beforeSend: function (data) {
+        //                 plus.nativeUI.showWaiting();
+        //             },
+        //             success: function (data) {
+        //                 plus.nativeUI.closeWaiting();
+        //                 if (data.showapi_res_code == 0) {
+        //                     console.log("成功");
+        //                     var dice1 = data.showapi_res_body;
+        //                     var dice2 = dice1.pagebean;
+        //                     var swpier = '';
+        //                     for (var i = 0; i < 5; i++) {
+        //                         var item = dice2.contentlist[i];
+        //                         var temp = '<div class="swiper-slide"><img src=" ' + item.contentImg + '" id="test' + i + '"/></div>';
+        //                         swpier = swpier + temp;
+        //                         banerArray.push(item);
+        //                     }
+        //                     swiperTest.innerHTML = swpier;
+        //                     var mySwiper = new Swiper('.swiper-container', {
+        //                         autoplay: 1000,/*自动播放时间间隔 单位ms*/
+        //                         pagination: '.swiper-pagination', /*添加分页*/
+        //                         loop: true, /*开启循环*/
+        //                     })
+        //                     /*轮播图页面跳转*/
+        //                     mui.each(banerArray, function (index, item) {
+        //                         var imgID = 'test' + index;
+        //                         document.getElementById(imgID).addEventListener('tap', function () {
+        //                             mui.openWindow({
+        //                                 url: 'detail.html',
+        //                                 id: 'detail',
+        //                                 show: {
+        //                                     aniShow: 'slide-in-right' /*页面切换效果*/
+        //                                 },
+        //                                 extras: {
+        //                                     detailUrl: item.url,
+        //                                     detailTitle
+        //                                 })
+        //                         })
+        //                     }
+        //             },
+        //             error: function (xhr, type, errerThrown) {
+        //                 mui.toast('网络异常,请稍候再试');
+        //                 plus.nativeUI.closeWaiting();
+        //             }
+        //         });
+        //     });
+        // }      
+    </script>
+
+
+</body>
+
+</html>
