@@ -107,7 +107,7 @@ class MySqlDataBase {
       key = s;
     }
     value = 'select * from ' + this.table + ' where ' + key + ' = "' + mmap[key] + '"';
-    return query(value)[0];
+    return query(value);
   }
 
 

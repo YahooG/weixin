@@ -1,11 +1,426 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafbfb;
+      font-size: 14px;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    .dingbu {
+      width: 980px;
+      height: auto;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 18px 0;
+    }
+
+    .dingbu img {
+      float: left;
+    }
+
+    .dingbu span {
+      padding-top: 20px;
+      float: right;
+      cursor: pointer;
+    }
+
+    .navbar {
+      width: 100%;
+      height: 43px;
+      margin: 0 auto;
+      background: url("/images/img_18.jpg") repeat-x;
+      border-bottom: 1px solid #e3e6e8;
+    }
+
+    .navbar ul li {
+      display: block;
+      height: 31px;
+      padding: 6px 20px;
+      float: left;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .navbar ul li a {
+      height: 30px;
+      display: block;
+      line-height: 30px;
+      font-size: 14px;
+      font-family: "Microsoft Yahei";
+    }
+
+    a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .navbar ul span {
+      display: block;
+      width: 1px;
+      height: 43px;
+      background: url("/images/img_21.jpg")no-repeat center center;
+      float: left;
+    }
+
+    .navbar ul {
+      width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 0 0 30px;
+    }
+
+    .section {
+      width: 100%;
+      background: url("/images/img_27.jpg")no-repeat center top;
+      height: 795px;
+      overflow: hidden;
+    }
+
+    .banner {
+      margin: 12px 0 0 70px;
+      height: 440px;
+      padding: 20px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .banner .item {
+      width: 180px;
+      height: 180px;
+      position: relative;
+      float: left;
+      display: inline-block;
+      margin: 0 10px;
+      top: 50%;
+      margin-top: -90px;
+      cursor: pointer;
+    }
+
+    .active {
+      transform-style: preserve-3d;
+      cursor: default;
+      width: 410px;
+      height: 410px;
+      margin: -205px 5px 0;
+    }
+
+    .ziZhu {
+      width: 923px;
+      height: 423px;
+      margin: 100px auto;
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    .dibuBox {
+      width: 100%;
+      margin: 0 auto;
+      border-top: 3px solid #075ba4;
+    }
+
+    .dibu {
+      width: 980px;
+      height: auto;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 25px 0;
+    }
+
+    .dibuL {
+      float: left;
+    }
+
+    .dibuC {
+      float: right;
+    }
+
+    .blod {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .dibuBox2 {
+      padding: 15px 0 25px;
+      background: url("/images/img35.jpg")repeat-x left top;
+      font-size: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dingbu clearfix">
+    <img src="/images/img_03.jpg" alt="">
+    <span>
+      <a href="/login">登录后台管理中心</a>
+    </span>
+  </div>
+  <div class="navbar">
+    <ul>
+      <li>
+        <a href="#">首页</a>
+      </li>
+      <span></span>
+      <li>
+        <a href="#">代缴社保</a>
+      </li>
+      <span></span>
+      <li>
+        <a href="#">代缴公积金</a>
+      </li>
+      <span></span>
+      <li>
+        <a href="#">人才引进</a>
+      </li>
+      <span></span>
+      <li>
+        <a href="#">免费咨询</a>
+      </li>
+      <span></span>
+      <li>
+        <a href="#">税负服务</a>
+      </li>
+      <span></span>
+      <li>
+        <a href="#">留学生落户</a>
+      </li>
+      <span></span>
+      <li>
+        <a href="#">代发工资</a>
+      </li>
+    </ul>
+  </div>
+  <div class="page">
+    <div class="section">
+
+
+    </div>
+    <div class="main-box">
+      <div class="banner">
+        <div type="1" class="item middle active">
+          <div class="main-text">
+            <div class="cont">
+              <h6>用户中心</h6>
+              <p class="profit">您的专属服务</p>
+            </div>
+          </div>
+          <div class="main-content">
+            <div class="bg-board"></div>
+            <div class="details-box">
+              <h4 class="ta-c size24 font-bold" act="name">用户中心</h4>
+              <p class="size14 remark ta-c">您的专属服务</p>
+              <ul>
+                <li>
+                  <a href="#">个人信息</a>
+                </li>
+                <li>
+                  <a href="#">我的预约</a>
+                </li>
+                <li>
+                  <a href="#">进度查询</a>
+                </li>
+                <li>
+                  <a href="#">修改密码</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="wave"></div>
+        </div>
+        <div type="1" class="item middle active">
+          <div class="main-text">
+            <div class="cont">
+              <h6>用户中心</h6>
+              <p class="profit">您的专属服务</p>
+            </div>
+          </div>
+          <div class="main-content">
+            <div class="bg-board"></div>
+            <div class="details-box">
+              <h4 class="ta-c size24 font-bold" act="name">用户中心</h4>
+              <p class="size14 remark ta-c">您的专属服务</p>
+              <ul>
+                <li>
+                  <a href="#">个人信息</a>
+                </li>
+                <li>
+                  <a href="#">我的预约</a>
+                </li>
+                <li>
+                  <a href="#">进度查询</a>
+                </li>
+                <li>
+                  <a href="#">修改密码</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="wave"></div>
+        </div>
+        <div type="1" class="item middle active">
+          <div class="main-text">
+            <div class="cont">
+              <h6>用户中心</h6>
+              <p class="profit">您的专属服务</p>
+            </div>
+          </div>
+          <div class="main-content">
+            <div class="bg-board"></div>
+            <div class="details-box">
+              <h4 class="ta-c size24 font-bold" act="name">用户中心</h4>
+              <p class="size14 remark ta-c">您的专属服务</p>
+              <ul>
+                <li>
+                  <a href="#">个人信息</a>
+                </li>
+                <li>
+                  <a href="#">我的预约</a>
+                </li>
+                <li>
+                  <a href="#">进度查询</a>
+                </li>
+                <li>
+                  <a href="#">修改密码</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="wave"></div>
+        </div>
+        <div type="1" class="item middle active">
+          <div class="main-text">
+            <div class="cont">
+              <h6>用户中心</h6>
+              <p class="profit">您的专属服务</p>
+            </div>
+          </div>
+          <div class="main-content">
+            <div class="bg-board"></div>
+            <div class="details-box">
+              <h4 class="ta-c size24 font-bold" act="name">用户中心</h4>
+              <p class="size14 remark ta-c">您的专属服务</p>
+              <ul>
+                <li>
+                  <a href="#">个人信息</a>
+                </li>
+                <li>
+                  <a href="#">我的预约</a>
+                </li>
+                <li>
+                  <a href="#">进度查询</a>
+                </li>
+                <li>
+                  <a href="#">修改密码</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="wave"></div>
+        </div>
+        <div type="1" class="item middle active">
+          <div class="main-text">
+            <div class="cont">
+              <h6>用户中心</h6>
+              <p class="profit">您的专属服务</p>
+            </div>
+          </div>
+          <div class="main-content">
+            <div class="bg-board"></div>
+            <div class="details-box">
+              <h4 class="ta-c size24 font-bold" act="name">用户中心</h4>
+              <p class="size14 remark ta-c">您的专属服务</p>
+              <ul>
+                <li>
+                  <a href="#">个人信息</a>
+                </li>
+                <li>
+                  <a href="#">我的预约</a>
+                </li>
+                <li>
+                  <a href="#">进度查询</a>
+                </li>
+                <li>
+                  <a href="#">修改密码</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="wave"></div>
+        </div>
+        <div type="1" class="item middle active">
+          <div class="main-text">
+            <div class="cont">
+              <h6>用户中心</h6>
+              <p class="profit">您的专属服务</p>
+            </div>
+          </div>
+          <div class="main-content">
+            <div class="bg-board"></div>
+            <div class="details-box">
+              <h4 class="ta-c size24 font-bold" act="name">用户中心</h4>
+              <p class="size14 remark ta-c">您的专属服务</p>
+              <ul>
+                <li>
+                  <a href="#">个人信息</a>
+                </li>
+                <li>
+                  <a href="#">我的预约</a>
+                </li>
+                <li>
+                  <a href="#">进度查询</a>
+                </li>
+                <li>
+                  <a href="#">修改密码</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="wave"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ziZhu">
+    <img src="/images/img28.jpg" alt="">
+  </div>
+  <div class="dibuBox">
+    <div class="dibu">
+      <div class="dibuL">
+        <img src="images/wei-bottom1.png" alt="">
+      </div>
+      <div class="dibuC">
+        <span class="blod">公司总部</span>
+        <br> 电话（Tel）：010-51099500&nbsp; &nbsp; &nbsp;传真（Fax）：010-51099510
+        <br> 地址：北京市朝阳区和平街14区甲16楼华表大厦三层(100013)
+
+      </div>
+    </div>
+  </div>
+  <div class="dibuBox2">
+
+    Copyright c2011 DongFangHuiBo . All rights reserved. 京ICP备16002183号 京公网安备1101052712号 站长统计
+
+  </div>
+</body>
+
 </html>

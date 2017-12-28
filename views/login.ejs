@@ -160,9 +160,10 @@
               pwd: pwd
             }
           }).done(function (msg) {
-            console.log(msg);
+            // console.log(msg);
             if (msg.data == "/admin") {
-              window.location = "http://39.106.132.165/admin"
+              console.log("asfmqwmf")
+              window.location = "http://localhost:3000/admin"
             }
           }).fail(function (jqXHR, textstatus) {
             console.log("Request failed:" + textstatus);
