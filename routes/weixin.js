@@ -63,34 +63,12 @@ const map =
                         "key": "BTN_GOOD"
                     }
                 ]
-            },
-            {
-                "name": "查询天气",
-                "sub_button": [
-                    {
-                        "type": "click",
-                        "name": "武汉",
-                        "key": "BTN_TQ_WUHAN"
-                    },
-                    {
-                        "type": "click",
-                        "name": "上海",
-                        "key": "BTN_TQ_SHANGHAI"
-                    },
-                    {
-                        "type": "click",
-                        "name": "北京",
-                        "key": "BTN_TQ_BEIJING"
-                    }
-                ]
-            },
-            {
-                "type": "click",
-                "name": "帮助",
-                "key": "BTN_HELP"
             }
+
         ]
     }
+
+
 
 function getAccessToken() {
     request.get(`https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appId}&secret=${appsecret}`, {}, function (err, httpResponse, body) {
