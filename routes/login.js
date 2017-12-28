@@ -14,6 +14,9 @@ user.add({name: '12312', pwd: 'asdasda', tas})
 router.get('/', function(req, res, next) {
   res.render('login',{});
 });
+// router.post("/",function(req,res,next){
+//   console.log(req.body);
+// })
 
 /**
  * 微信的接口

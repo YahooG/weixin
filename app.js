@@ -31,6 +31,19 @@ app.use('/login', login);
 app.use('/weixin', weixin);
 app.use('/api', api);
 
+app.post("/loginbtn",function(req,res,next){
+  console.log(req.body);
+  if(req.body.name=="admin"&&req.body.pwd=="admin"){
+    res.json({data:"/admin"})
+  }
+})
+app.get("/admin",function(req,res,next){
+  res.render('admin',{});
+})
+
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
