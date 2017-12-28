@@ -42,6 +42,7 @@ const query = function (sql, values) {
 
 let value;
 
+
 /**
 作为数据库基类
 **/
@@ -76,7 +77,7 @@ class MySqlDataBase {
 
   /**
     field1: 新的值
-    field2: 条件
+    field2: 条件  
     **/
 
   update(field1, field2) {

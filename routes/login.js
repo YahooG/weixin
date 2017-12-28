@@ -1,8 +1,14 @@
 var express = require('express');
 var router = express.Router();
-
+const user = require('../models/users');
 // var XMLJS = require('xml2js');
 
+user.add({name: '12312', pwd: 'asdasda', tas})
+  .then(function(item){
+      console.log(item);
+  }).catch(function(err){
+
+  });
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
