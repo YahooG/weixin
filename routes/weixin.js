@@ -45,32 +45,32 @@ const map =
     {
         "button": [
             {
-                "type": "click",
-                "name": "今日歌曲",
-                "key": "V1001_TODAY_MUSIC"
+                "type": "view",
+                "name": "信用查询",
+                "url": "http://39.106.132.165/app"
             },
             {
-                "type": "click",
-                "name": "歌手简介",
-                "key": "V1001_TODAY_SINGER"
+                "type": "view",
+                "name": "我们",
+                "url": "http://39.106.132.165"
             },
             {
-                "name": "菜单",
+                "name": "个人中心",
                 "sub_button": [
                     {
                         "type": "view",
-                        "name": "搜索",
-                        "url": "http://www.soso.com/"
+                        "name": "登陆",
+                        "url": "http://39.106.132.165/app/login"
                     },
                     {
                         "type": "view",
-                        "name": "视频",
-                        "url": "http://v.qq.com/"
+                        "name": "在线办理",
+                        "url": "http://39.106.132.165/app/login"
                     },
                     {
-                        "type": "click",
-                        "name": "赞一下我们",
-                        "key": "V1001_GOOD"
+                        "type": "view",
+                        "name": "预约服务",
+                        "url": "http://39.106.132.165/app/login"
                     }
                 ]
             }
