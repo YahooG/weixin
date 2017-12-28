@@ -45,24 +45,12 @@ const map =
     {
         "button": [
             {
-                "type": "view",
-                "name": "我",
-                "url": "http://www.baidu.com/"
-            },
-
-            {
-                "type": "view",
-                "name": "歌手简介",
-                "url": "http://www.baidu.com/"
-            },
-
-            {
-                "name": "菜单",
+                "name": "demo",
                 "sub_button": [
                     {
                         "type": "view",
-                        "name": "搜索",
-                        "url": "http://www.soso.com/"
+                        "name": "test",
+                        "url": "http://39.106.132.165/app"
                     },
                     {
                         "type": "view",
@@ -70,12 +58,38 @@ const map =
                         "url": "http://v.qq.com/"
                     },
                     {
-                        "type": "view",
-                        "name": "赞一",
-                        "url": "http://v.qq.com/"
-                    }]
-            }]
-
+                        "type": "click",
+                        "name": "赞一下我们",
+                        "key": "BTN_GOOD"
+                    }
+                ]
+            },
+            {
+                "name": "查询天气",
+                "sub_button": [
+                    {
+                        "type": "click",
+                        "name": "武汉",
+                        "key": "BTN_TQ_WUHAN"
+                    },
+                    {
+                        "type": "click",
+                        "name": "上海",
+                        "key": "BTN_TQ_SHANGHAI"
+                    },
+                    {
+                        "type": "click",
+                        "name": "北京",
+                        "key": "BTN_TQ_BEIJING"
+                    }
+                ]
+            },
+            {
+                "type": "click",
+                "name": "帮助",
+                "key": "BTN_HELP"
+            }
+        ]
     }
 
 function getAccessToken() {
