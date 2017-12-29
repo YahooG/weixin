@@ -136,7 +136,8 @@
                             data: { phone: phone, name: name, cardId: cardId, pwd: pwd, sex: sex, weixin: weixin, age: age },
                             success: function (data) {
                                 if (data === 'ok') {
-                                    alert('注册成功')
+                                    alert('注册成功');
+                                    window.location = "http://39.106.132.165/app";
                                 } else {
                                     alert('注册失败');
                                 }
@@ -144,7 +145,8 @@
                             error: function (xhr, type) {
                                 console.log(xhr);
                                 if (xhr.responseText === 'ok') {
-                                    alert('注册成功')
+                                    alert('注册成功');
+                                    window.location = "http://39.106.132.165/app";
                                 }else{
                                     // alert('服务器 error!');
                                 }
