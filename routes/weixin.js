@@ -86,11 +86,11 @@ function getAccessToken() {
         } else {
             const result = JSON.parse(body);
             let access_token = result.access_token;
-            request.post({ url: `https://api.weixin.qq.com/cgi-bin/menu/create?access_token=${access_token}`, form: map }, function (err, httpResponse, body) {
+            request.post({ url: `https://api.weixin.qq.com/cgi-bin/menu/create?access_token=${access_token}`, body: map, json: true }, function (err, httpResponse, body) {
                 if (err) {
                     console.error(err);
                 } else {
-                    console.log(JSON.parse(body));
+                    console.log(body);
                 }
             });
         }

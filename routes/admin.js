@@ -13,6 +13,12 @@ router.get("/", function (req, res, next) {
 });
 
 
+router.get('/login', function (req, res, next) {
+    res.render('adminlogin', {});
+});
+
+
+
 router.post("/searchUser", function (req, res, next) {
     user.getThis(req.body)
         .then(function (item) {
@@ -27,6 +33,8 @@ router.post("/searchUser", function (req, res, next) {
 router.post("/loginbtn", function (req, res) {
     if (req.body.name == "admin" && req.body.pwd == "admin") {
         res.json({ "data": "/admin" })
+    } else {
+        res.send('error');
     }
 });
 
@@ -67,15 +75,14 @@ router.post("/updateUser", function (req, res) {
 
 
 router.post("/deleteUser", function (req, res, next) {
-    user.del(req.body)
+    user.delUser(req.body.cardId)
         .then(function (item) {
             console.log(item);
             res.send('ok');
         }).catch(function (err) {
             res.send('err');
             console.error(err);
-        })
-        ;
+        });
 });
 
 

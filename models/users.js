@@ -18,6 +18,15 @@ class User extends Database {
     return super.getCon()(value);
   }
 
+  delUser(cardId) {
+    let value = `DELETE FROM ${this.table} WHERE cardId = '${cardId}'`;
+    return super.getCon()(value);
+  }
+  
+  findByCarIdAndPwd(cardId, pwd){
+    let value = `DELETE FROM ${this.table} WHERE cardId = '${cardId}' AND pwd = '${pwd}'`;
+    return super.getCon()(value);
+  }
 }
 
 
