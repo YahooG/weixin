@@ -1,0 +1,83 @@
+<div id="usermanagement">
+
+    <table border="0" style=" border:1px solid #000000;" cellpadding="0" cellspacing="1" class="text-center table table-striped table-bordered  table-hover table-condensed">
+        <tr class="lei">
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>手机号</th>
+            <th>身份证号</th>
+            <th>设置</th>
+            <th>设置</th>
+        </tr>
+
+        <%if(userLIst){%>
+
+            <%for (var i=0;i<userLIst.length;i++){%>
+                <tr class="info">
+                    <td>
+                        <%=userLIst[i].name%>
+                    </td>
+                    <td>
+                        <%=userLIst[i].sex%>
+                    </td>
+                    <td>
+                        <%=userLIst[i].age%>
+                    </td>
+                    <td>
+                        <%=userLIst[i].phone%>
+                    </td>
+                    <td>
+                        <%=userLIst[i].cardId%>
+                    </td>
+                    <td>
+                        <a href="#" class="button button-primary button-pill button-small xiuGai">修改</a>
+                        <!-- <button class="xiuGai">修改</button> -->
+                    </td>
+                    <td>
+                        <a href="#" class="button button-primary button-pill button-small shanChu">删除</a>
+                        <!-- <button class="shanChu">删除</button> -->
+                    </td>
+                </tr>
+                <%}%>
+                    <%}%>
+
+    </table>
+
+
+
+    <!-- 登陆 -->
+    <div class="update" id="dialog-login" title="修改用户信息界面">
+        <div class="form-group">
+            <label for="exampleInputEmail1">name</label>
+            <input class="name" type="text" class="form-control" id="exampleInputEmail1" placeholder="name" name="name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input class="pwd" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">wechat</label>
+            <input class="wechat" type="text" class="form-control" id="exampleInputPassword1" placeholder="wechat" name="passwordAgin">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">phone</label>
+            <input class="phone" type="text" class="form-control" id="exampleInputPassword1" placeholder="phone" name="password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">cardId</label>
+            <input class="card" type="text" class="form-control" id="exampleInputPassword1" placeholder="card" name="password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">sex</label>
+            <input class="sex" type="text" class="form-control" id="exampleInputPassword1" placeholder="sex" name="password">
+        </div>
+        <!-- <div class="form-group">
+            <label for="exampleInputPassword1"></label>type</label>
+            <input class="type" type="text" class="form-control" id="exampleInputPassword1" placeholder="type" name="password">
+        </div> -->
+
+        <button id="submit" type="submit" class="btn btn-success">提交</button>
+
+
+    </div>

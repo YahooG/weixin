@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- 文档：https://weui.io/  -->
+    <link href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
+    <title>登陆</title>
+    <style>
+        .item {
+            margin-bottom: 25px;
+            height: 35px;
+            line-height: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+
+    </div>
+
+    <div class="weui-cells weui-cells_form">
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">身份证</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="" name="name" id="cardId">
+            </div>
+        </div>
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">密码</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="password" placeholder="" name="pwd" id="pwd">
+            </div>
+        </div>
+
+        <input type="submit" name="" value="登陆" class="weui-btn weui-btn_plain-primary submit">
+
+    </div>
+
+    <!-- http://css88.com/doc/zeptojs_api/ -->
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script>
+        $(function () {
+            var submit = $(".submit");
+            submit.click(function (event) {
+                let cardId = $('#cardId').val();
+                let pwd = $('#pwd').val();
+                if (cardId && pwd) {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/app/login',
+                        data: { cardId: cardId, pwd: pwd },
+                        success: function (data) {
+                            if (data === 'ok') {
+                                alert('登陆成功')
+                            } else {
+                                alert('注册失败');
+                            }
+                        },
+                        error: function (xhr, type) {
+                            console.log(xhr);
+                            if (xhr.responseText === 'ok') {
+                                alert('注册成功')
+                            } else {
+                                // alert('服务器 error!');
+                            }
+                        }
+                    });
+
+                } else {
+                    alert('输入不能为空');
+                }
+                return false;
+            });
+        })
+    </script>
+
+</body>
+
+</html>

@@ -162,11 +162,13 @@
           }).done(function (msg) {
             // console.log(msg);
             if (msg.data == "/admin") {
-              console.log("asfmqwmf")
-              window.location = "http://localhost:3000/admin"
+              window.location = "http://http://39.106.132.165/admin";
+            } else {
+              alert('输入有误，请联系管理员');
             }
           }).fail(function (jqXHR, textstatus) {
             console.log("Request failed:" + textstatus);
+            alert('服务器异常');
           })
         }
       })

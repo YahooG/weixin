@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- 文档：https://weui.io/  -->
+    <link href="https://cdn.bootcss.com/weui/1.1.2/style/weui.min.css" rel="stylesheet">
+    <title>注册</title>
+    <style>
+        .item {
+            margin-bottom: 25px;
+            height: 35px;
+            line-height: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+
+    </div>
+
+    <div class="weui-cells weui-cells_form">
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">name</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="" name="name" id="name">
+            </div>
+        </div>
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">pwd</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="text" placeholder="" name="pwd" id="pwd">
+            </div>
+        </div>
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">pwd</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="password" placeholder="" name="aginName" id="aginPwd">
+            </div>
+        </div>
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">weixin</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="" name="weixin" id="weixin">
+            </div>
+        </div>
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">phone</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="" name="phone" id="phone">
+            </div>
+        </div>
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">cardId</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="" name="cardId" id="cardId">
+            </div>
+        </div>
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">age</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="number" placeholder="" id="age">
+            </div>
+        </div>
+
+        <div class="item weui-cell weui-cell_vcode">
+            <div class="weui-cell__hd">
+                <label class="weui-label">sex</label>
+            </div>
+            <div class="weui-cell__bd">
+                <input class="weui-input" type="tel" placeholder="" name="sex" id="sex">
+            </div>
+        </div>
+
+        <!-- <div class="item weui-cell weui-cell_vcode">
+                <div class="weui-cell__hd">
+                    <label class="weui-label">type</label>
+                </div>
+                <div class="weui-cell__bd">
+                    <input class="weui-input" type="tel" placeholder="请输入您的用户类型">
+                </div>
+            </div> -->
+        <!-- <a href="javascript:;" class="weui-btn weui-btn_plain-primary submit">注册</a> -->
+        <input type="submit" name="" value="注册" class="weui-btn weui-btn_plain-primary submit">
+
+    </div>
+
+    <!-- http://css88.com/doc/zeptojs_api/ -->
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script>
+        $(function () {
+            var submit = $(".submit");
+            submit.click(function (event) {
+                let name = $('#name').val();
+                let cardId = $('#cardId').val();
+                let sex = $('#sex').val();
+                let phone = $('#phone').val();
+                let pwd = $('#pwd').val();
+                let weixin = $('#weixin').val();
+                let age = $('#age').val();
+                let aginPwd = $('#aginPwd').val();
+
+                if (name && cardId && sex && pwd && weixin && age) {
+                    if (pwd != aginPwd) {
+                        alert('再次密码输入不同');
+                    } else {
+                        $.ajax({
+                            type: 'POST',
+                            url: '/app/regsiter',
+                            data: { phone: phone, name: name, cardId: cardId, pwd: pwd, sex: sex, weixin: weixin, age: age },
+                            success: function (data) {
+                                if (data === 'ok') {
+                                    alert('注册成功')
+                                } else {
+                                    alert('注册失败');
+                                }
+                            },
+                            error: function (xhr, type) {
+                                console.log(xhr);
+                                if (xhr.responseText === 'ok') {
+                                    alert('注册成功')
+                                }else{
+                                    // alert('服务器 error!');
+                                }
+                            }
+                        });
+                    }
+                } else {
+                    alert('输入不能为空');
+                }
+                return false;
+            });
+        })
+    </script>
+
+</body>
+
+</html>
